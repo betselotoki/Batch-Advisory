@@ -1,0 +1,82 @@
+﻿@model EligibleCourse
+
+@{
+    ViewData["Title"] = "EligibleCourses";
+}
+
+
+<div>
+    <h4>Student</h4>
+    <hr />
+    @if(ViewBag.AddedSusessfully==true){
+        <div class="alert alert-success" role="alert">
+            Course Added successesfully
+        </div>
+    }
+
+
+    <dl class="row">
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.Src)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.Src)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.student.Name)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.student.Name)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.student.Batch)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.student.Batch)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.student.Gpa)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.student.Gpa)
+        </dd>
+        <dt class="col-sm-2">
+            @Html.DisplayNameFor(model => model.student.CoursesRegistered)
+        </dt>
+        <dd class="col-sm-10">
+            @Html.DisplayFor(model => model.student.CoursesRegistered)
+        </dd>
+    </dl>
+</div>
+
+<div>
+    <h4>Eligible Courses</h4>
+    <hr />
+    <form asp-action="EligibleCourses">
+        @if(Model.student.CoursesRegistered<4){
+            <table class="table">
+                <tr>
+                    <th width="15px">Register</th>
+                    <th>Course Code</th>
+                    <th>Course Name</th>
+                    <th>Credit Hour</th>
+                    <th>Batch Taking Course</th>
+                </tr>
+
+                @for(int i=0; i<Model.CoursesList.Count; i++){
+                    <tr>
+                        <td width="15px">@Html.CheckBoxFor(model => model.CoursesList[i].isRegistered)</td>
+                        <td>@Html.DisplayFor(model => model.CoursesList[i].CourseCode)</td>
+                        <td>@Html.DisplayFor(model => model.CoursesList[i].CourseName)</td>
+                        <td>@Html.DisplayFor(model => model.CoursesList[i].CreditHour)</td>
+                        <td>@Html.DisplayFor(model => model.CoursesList[i].BatchTakingCourse)</td>
+                    </tr>
+                }          
+
+            </table>
+        }
+        <input type="submit" value="Apply" class="btn btn-outline-success">
+    </form>
+
+
+</div>

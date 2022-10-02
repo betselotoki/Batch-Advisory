@@ -1,0 +1,47 @@
+﻿@model Batch_Advisory.Models.Student
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+
+<div>
+    <h4>Student Detail</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Src)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Src)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Gpa)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Gpa)
+        </dd>        
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.CoursesCompleted)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.CoursesCompleted)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Batch)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.BatchNavigation.BatchId)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model?.Src">Edit</a>
+    <a asp-action="EligibleCourses" asp-controller="Students" asp-route-id="@Model?.Src"> Back to List</a>
+</div>

@@ -1,0 +1,47 @@
+﻿@model List<Batch_Advisory.Models.AvailableCourse>
+
+
+@{
+    ViewData["Title"] = "Available Courses List";
+}
+
+<h4>Available Courses</h4>
+<hr/>
+
+        <table class="table">
+            <tr>
+                <th>Course Code</th>
+                <th>Course Name</th>
+                <th>Credit Hour</th>
+                <th>Prerequisite Course</th>
+                <th>Batch taking course</th>
+            </tr>
+
+            @foreach (var item in Model) {
+                <tr>
+                    <td>
+                        @item.CourseCode
+                    </td>
+                    <td>
+                        @item.CourseName
+                    </td>
+                    <td>
+                        @item.CreditHour
+                    </td>
+                    <td>
+                        @item.PrerequsiteCourse
+                    </td>
+                    <td>
+                        @item.BatchTakingCourse
+                    </td>
+                </tr>
+            }
+
+        </table>
+
+
+
+<div>
+    <a class="btn btn-outline-success" onclick="openNav()">View Eligible Courses List</a>
+</div>
+

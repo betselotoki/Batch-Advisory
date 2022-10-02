@@ -1,0 +1,51 @@
+﻿@model Batch_Advisory.Models.Student
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Student</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Src" />
+            <div class="form-group">
+                <label asp-for="Name" class="control-label"></label>
+                <input asp-for="Name" class="form-control" />
+                <span asp-validation-for="Name" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Batch" class="control-label"></label>
+                <select asp-for="Batch" class="form-control" asp-items="ViewBag.Batch"></select>
+                <span asp-validation-for="Batch" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Gpa" class="control-label"></label>
+                <input asp-for="Gpa" class="form-control" />
+                <span asp-validation-for="Gpa" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="CoursesCompleted" class="control-label"></label>
+                <input asp-for="CoursesCompleted" class="form-control" />
+                <span asp-validation-for="CoursesCompleted" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="EligibleCourses" asp-controller="Students" asp-route-id="@Model?.Src"> Back to List</a>
+</div>
+
