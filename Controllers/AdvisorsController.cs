@@ -64,6 +64,25 @@ namespace Batch_Advisory.Controllers
             return View(advisor);
         }
 
+        public async Task<IActionResult> StudentDetails(int? id)
+        {
+            if (id == null || _context.Students == null)
+            {
+                return NotFound();
+            }
+
+            var advisor = await _context.Advisors
+                .Include(a => a.AssignedBatchNavigation)
+                .FirstOrDefaultAsync(m => m.Id == id);
+
+            if (advisor == null)
+            {
+                return NotFound();
+            }
+
+            return View(advisor);
+        }
+
         // GET: Advisors/Create
         public IActionResult Create()
         {

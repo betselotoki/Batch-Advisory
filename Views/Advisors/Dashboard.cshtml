@@ -5,6 +5,69 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h1>Dashboard</h1>
+<h1>Dashboard </h1>
 
-<p> This is Advisor dashboard </p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                SRC
+            </th>
+            <th>
+                Name
+            </th>
+            <th>
+                Batch
+            </th>
+            <th>
+                GPA
+            </th>
+            <th>
+                Total Course Registered
+            </th>
+            <th>
+                Course Code
+            </th>
+            <th>
+                Credit Hour
+            </th>
+            <th>
+                Course Batch
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+        
+            <tr>
+                <td>
+                    AB1234
+                </td>
+                <td>
+                    Abebe Balcha
+                </td>
+                <td>
+                    1901
+                </td>
+                <td>
+                    3.26
+                </td>
+                <td>
+                    3
+                </td>
+                <td>
+                    CS222  
+                </td>
+                <td>
+                    5
+                </td>
+                <td>
+                    DRB2202
+                </td>
+                <td>
+                    <a class="btn btn-outline-info" asp-action="StudentDetails" asp-route-id="@Model?.Id">Details</a>
+                </td>
+            </tr>
+        
+    </tbody>
+</table>

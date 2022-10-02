@@ -1,0 +1,55 @@
+﻿@model Batch_Advisory.Models.Advisor
+
+@{
+    ViewData["Title"] = "StudentDetails";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Course Applied Details</h1>
+
+<div>
+    <h4>Abebe Balcha</h4>
+    <hr />
+    <dl class="row">
+        
+        <dt class = "col-sm-5">
+            GPA
+        </dt>
+        <dd class = "col-sm-5">
+            3.26
+        </dd>       
+        
+        <dt class = "col-sm-5">
+            Total Courses Registered
+        </dt>
+        <dd class = "col-sm-5">
+            3
+        </dd>
+        <dt class = "col-sm-5">
+            Batch
+        </dt>
+        <dd class = "col-sm-5">
+            1901
+        </dd>
+        <dt class="col-sm-5">
+            Course Applied
+        </dt>
+        <dd class="col-sm-5">
+            CS222
+        </dd>
+        <dt class="col-sm-5">
+            Course Credit Hour
+        </dt>
+        <dd class="col-sm-5">
+            5
+        </dd>
+
+    </dl>
+</div>
+<div>
+    <a asp-action="Dashboard" class="btn btn-success"  asp-route-id="1">Aprove</a>
+    <a asp-action="Dashboard" class="btn btn-danger" asp-route-id="1">Decline</a>
+    
+    <br/>
+    <a asp-action="Dashboard" asp-route-id="1">Back to List</a>
+</div>
